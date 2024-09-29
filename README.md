@@ -1,30 +1,31 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Lei Zhu                    |
+| Date         | 09/28/2024                 |
+| Course       | Fall                       |
+| Assignment # | 1                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+Design a Vending Machine to produce multiple beverages and allow the customer to add milk and sugar (for an extra charge) to get the final drink and calculate the price.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/LeiZ54/cs-665-assignment-1.git
 
-# Implementation Description 
-
-
-For each assignment, please answer the following:
-
+# Implementation Description
 - Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
+be easily added or removed in the future.  
+If you want to add a new beverage, just create a new beverage class and add it to the BeverageFactory.
+
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
+easy for others to read and maintain.  
+  Each drink has an exclusive class inherited from the Drinks category and its base selling price can be set individually (2.0 by default). When using the vending machine, the customer only needs to select the drink category and the amount of milk and sugar. All beverages are made by the Factory class. When using the vending machine, the customer only needs to select the beverage category and the amount of milk and sugar to get the final beverage.
+- Describe how you have avoided duplicated code and why it is important.  
+  In this implementation, we avoided duplication by centralizing key logic for object creation, pricing, and validation into dedicated methods and classes. This not only makes the code easier to maintain and extend but also ensures consistency and reduces the likelihood of errors.
+
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
-
+Factory Pattern: In this implementation, the BeverageFactory class is responsible for creating instances of different beverage types, by using it, the logic for creating different types of beverages will be in one place.
 
 # Maven Commands
 
