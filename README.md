@@ -2,112 +2,28 @@
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
 | Name         | Lei Zhu                    |
-| Date         | 09/28/2024                 |
+| Date         | 10/10/2024                 |
 | Course       | Fall                       |
-| Assignment # | 1                          |
+| Assignment # | 2                          |
 
 # Assignment Overview
-Design a Vending Machine to produce multiple beverages and allow the customer to add milk and sugar (for an extra charge) to get the final drink and calculate the price.
+Design a Notification App to notify the drivers of the notifications.
 
 # GitHub Repository Link:
-https://github.com/LeiZ54/cs-665-assignment-1.git
+https://github.com/LeiZ54/cs-665-assignment-2.git
 
 # Implementation Description
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.  
-If you want to add a new beverage, just create a new beverage class and add it to the BeverageFactory.
+  By using an abstract class and the Observer Pattern, new driver types can be easily added or removed by extending the Driver class without modifying existing code.
 
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.  
-  Each drink has an exclusive class inherited from the Drinks category and its base selling price can be set individually (2.0 by default). When using the vending machine, the customer only needs to select the drink category and the amount of milk and sugar. All beverages are made by the Factory class. When using the vending machine, the customer only needs to select the beverage category and the amount of milk and sugar to get the final beverage.
+  The implementation is simple and easy to understand due to clear use of inheritance, the Observer Pattern, intuitive naming, and modular design, making it easy to read, maintain, and extend.
+
 - Describe how you have avoided duplicated code and why it is important.  
-  In this implementation, we avoided duplication by centralizing key logic for object creation, pricing, and validation into dedicated methods and classes. This not only makes the code easier to maintain and extend but also ensures consistency and reduces the likelihood of errors.
+  Duplicated code is avoided by centralizing shared logic in the abstract Driver class, making the code easier to maintain, extend, and update with fewer errors.
 
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
-Factory Pattern: In this implementation, the BeverageFactory class is responsible for creating instances of different beverage types, by using it, the logic for creating different types of beverages will be in one place.
-
-# Maven Commands
-
-We'll use Apache Maven to compile and run this project. You'll need to install Apache Maven (https://maven.apache.org/) on your system. 
-
-Apache Maven is a build automation tool and a project management tool for Java-based projects. Maven provides a standardized way to build, package, and deploy Java applications.
-
-Maven uses a Project Object Model (POM) file to manage the build process and its dependencies. The POM file contains information about the project, such as its dependencies, the build configuration, and the plugins used for building and packaging the project.
-
-Maven provides a centralized repository for storing and accessing dependencies, which makes it easier to manage the dependencies of a project. It also provides a standardized way to build and deploy projects, which helps to ensure that builds are consistent and repeatable.
-
-Maven also integrates with other development tools, such as IDEs and continuous integration systems, making it easier to use as part of a development workflow.
-
-Maven provides a large number of plugins for various tasks, such as compiling code, running tests, generating reports, and creating JAR files. This makes it a versatile tool that can be used for many different types of Java projects.
-
-## Compile
-Type on the command line: 
-
-```bash
-mvn clean compile
-```
-
-
-
-## JUnit Tests
-JUnit is a popular testing framework for Java. JUnit tests are automated tests that are written to verify that the behavior of a piece of code is as expected.
-
-In JUnit, tests are written as methods within a test class. Each test method tests a specific aspect of the code and is annotated with the @Test annotation. JUnit provides a range of assertions that can be used to verify the behavior of the code being tested.
-
-JUnit tests are executed automatically and the results of the tests are reported. This allows developers to quickly and easily check if their code is working as expected, and make any necessary changes to fix any issues that are found.
-
-The use of JUnit tests is an important part of Test-Driven Development (TDD), where tests are written before the code they are testing is written. This helps to ensure that the code is written in a way that is easily testable and that all required functionality is covered by tests.
-
-JUnit tests can be run as part of a continuous integration pipeline, where tests are automatically run every time changes are made to the code. This helps to catch any issues as soon as they are introduced, reducing the need for manual testing and making it easier to ensure that the code is always in a releasable state.
-
-To run, use the following command:
-```bash
-mvn clean test
-```
-
-
-## Spotbugs 
-
-SpotBugs is a static code analysis tool for Java that detects potential bugs in your code. It is an open-source tool that can be used as a standalone application or integrated into development tools such as Eclipse, IntelliJ, and Gradle.
-
-SpotBugs performs an analysis of the bytecode generated from your Java source code and reports on any potential problems or issues that it finds. This includes things like null pointer exceptions, resource leaks, misused collections, and other common bugs.
-
-The tool uses data flow analysis to examine the behavior of the code and detect issues that might not be immediately obvious from just reading the source code. SpotBugs is able to identify a wide range of issues and can be customized to meet the needs of your specific project.
-
-Using SpotBugs can help to improve the quality and reliability of your code by catching potential bugs early in the development process. This can save time and effort in the long run by reducing the need for debugging and fixing issues later in the development cycle. SpotBugs can also help to ensure that your code is secure by identifying potential security vulnerabilities.
-
-Use the following command:
-
-```bash
-mvn spotbugs:gui 
-```
-
-For more info see 
-https://spotbugs.readthedocs.io/en/latest/maven.html
-
-SpotBugs https://spotbugs.github.io/ is the spiritual successor of FindBugs.
-
-
-## Checkstyle 
-
-Checkstyle is a development tool for checking Java source code against a set of coding standards. It is an open-source tool that can be integrated into various integrated development environments (IDEs), such as Eclipse and IntelliJ, as well as build tools like Maven and Gradle.
-
-Checkstyle performs static code analysis, which means it examines the source code without executing it, and reports on any issues or violations of the coding standards defined in its configuration. This includes issues like code style, code indentation, naming conventions, code structure, and many others.
-
-By using Checkstyle, developers can ensure that their code adheres to a consistent style and follows best practices, making it easier for other developers to read and maintain. It can also help to identify potential issues before the code is actually run, reducing the risk of runtime errors or unexpected behavior.
-
-Checkstyle is highly configurable and can be customized to fit the needs of your team or organization. It supports a wide range of coding standards and can be integrated with other tools, such as code coverage and automated testing tools, to create a comprehensive and automated software development process.
-
-The following command will generate a report in HTML format that you can open in a web browser. 
-
-```bash
-mvn checkstyle:checkstyle
-```
-
-The HTML page will be found at the following location:
-`target/site/checkstyle.html`
-
-
-
-
+  Observer Pattern: This pattern was chosen because it decouples the shop from the drivers, making it easy to add or remove drivers without changing the shop's core logic, ensuring flexibility and scalability.
